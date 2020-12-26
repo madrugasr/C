@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void main()
 {
@@ -18,5 +17,4 @@ void main()
     printf("\n------------\n");
     printf("\nValor: %d",a);
     printf("\n\n");
-    
 }

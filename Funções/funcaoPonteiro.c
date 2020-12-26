@@ -5,7 +5,7 @@ int maisDez(int a)
     return a + 10;
 }
 
-
+//Utilizando PONTEIROS
 void maisDezP(int *a)
 {
      *a = *a + 10;
@@ -21,9 +21,11 @@ void main()
     printf("\nDigite um numero: ");
     scanf("%d", &a);
 
-    printf("\n%d mais 10 = %d", a, maisDez(a));
+    printf("\n%d + 10 = %d", a, maisDez(a));
 
+    //Atribuição de valores com PONTEIROS.
     maisDezP(&a);
-    printf("\nmais 10 = %d", a);
+
+    printf("\n\nValor: %d",a);
     printf("\n\n");
 }

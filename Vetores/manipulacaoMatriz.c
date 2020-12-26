@@ -7,8 +7,6 @@ void main()
     //Criando Matrizes
     printf("\nMATRIZES");
     printf("\n----------\n");
-    //printf("\nDigite a ORDEM da MATRIZ: ");
-    //scanf("%d", &o);
 
     float matriz[2][2];
 
@@ -22,7 +20,7 @@ void main()
     }
 
     printf("\n");
-    printf("\nInvertendo os VALORES");
+    printf("\nInvertendo VALORES");
     //Invertendo valores.
     aux1 = matriz[0][0];
     aux2 = matriz[0][1];

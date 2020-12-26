@@ -28,7 +28,7 @@ void main()
     //Chamando FUNÇÃO SOMA.
     soma(a,b);
     printf("\n");
-    //Concatenação da FUNÇÃO SOMAR ao PRINTF.d
+    //Concatenação da FUNÇÃO SOMAR ao PRINTF
     printf("\nSoma %.1f", somaR(a,b));
     printf("\n\n");
 }
