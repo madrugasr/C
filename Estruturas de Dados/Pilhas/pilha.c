@@ -5,7 +5,7 @@ imprimeVetor(int pilha[10])
 {
     for (int i = 0; i < 10; i++)
     {
-       printf("%d. ", pilha[i]);
+       printf("%d ",pilha[i]);
     }
 }
 
