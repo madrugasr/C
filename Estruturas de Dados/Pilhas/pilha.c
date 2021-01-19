@@ -9,36 +9,9 @@ imprimeVetor(int pilha[10])
     }
 }
 
-//Função que retorna PILHA VAZIA.
-bool pilhaVazia(int topo)
-{
-    if(topo == -1)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-//Função que retorna PILHA CHEIA.
-bool pilhaCheia(int topo)
-{
-    if (topo == 9)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
 void pilhaPush(int pilha[10], int *topo, int valor)
 {
-    
-    if (pilhaCheia(*topo)) //verifica se o vetor está totalmente preenchido.
+    if (*topo == 9) //verifica se o vetor está totalmente preenchido.
     {   
         printf("\n\nPilha cheia!");
     }
@@ -52,7 +25,7 @@ void pilhaPush(int pilha[10], int *topo, int valor)
 
 void pilhaPop(int pilha[10], int *topo)
 {
-    if (pilhaVazia(*topo)) //verifica se o vetor está totalmente vazio.
+    if (*topo == -1) //verifica se o vetor está totalmente vazio.
     {
         printf("\n\nPilha vazia!");
     }
@@ -84,7 +57,7 @@ int pilhaTamanho(int topo)
 //Função que retorna o ultimo valor inserido no vetor da pilha.
 int pilhaGet(int pilha[10], int *topo)
 {
-    if (pilhaVazia(*topo))
+    if (*topo == -1)
     {
         printf("\nPilha vazia!");
         return 0;
@@ -99,9 +72,9 @@ int pilhaGet(int pilha[10], int *topo)
 void main()
 {
     int pilha[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    int topo = -1;
+    int topo = -1, i;
 
-    printf("\nDESEMPILHANDO VALORES");
+    printf("\nEMPILHANDO E DESEMPILHANDO VALORES");
     printf("\n--------------------\n\n");
 
     pilhaConstrutor(pilha[10], &topo);
@@ -111,7 +84,7 @@ void main()
     printf("\n\n-------------------------\n");
 
     
-    if (pilhaVazia(topo))
+    if (topo == -1)
     {   
         printf("\nTamanho da Pilha: %d",pilhaTamanho(topo));
         printf("\nPilha vazia!");
@@ -121,29 +94,15 @@ void main()
     //Inserindo dados no vetor PILHAS usando a função pilhaPush;
     printf("\n\nEmpilhando / inserindo dados...");
     printf("\n---------------------------");
-    pilhaPush(pilha, &topo, 10);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 20);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 30);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 40);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 50);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 60);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 70);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 80);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 90);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 100);
-    imprimeVetor(pilha);
-    printf("\n\n----------------------------\n"); 
- 
-    if (pilhaCheia(topo))
+
+    for (i = 0; i < 10; i++)
+    {
+        pilhaPush(pilha, &topo, i);
+        imprimeVetor(pilha);
+    }
+    
+    
+    if (topo == 9)
     {   
         printf("\nUltimo valor da pilha: %d", pilhaGet(pilha, &topo));
         printf("\nTamanho da Pilha: %d",pilhaTamanho(topo));
@@ -154,28 +113,12 @@ void main()
     //Retirando dados do vetor PILHAS usando a função pilhaPop.
     printf("\n\nDesempilhando / retirando dados...");
     printf("\n---------------------------");
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    printf("\n\n---------------------------");
-    pilhaPop(pilha, &topo);
+
+    for (i = 0; i < 10; i++)
+    {
+        pilhaPop(pilha, &topo);
+        imprimeVetor(pilha);
+    }
     
     printf("\nUltimo valor da pilha: %d", pilhaGet(pilha, &topo));  
 

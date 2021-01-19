@@ -4,7 +4,7 @@ imprimeVetor(int pilha[10])
 {
     for (int i = 0; i < 10; i++)
     {
-       printf("%d. ", pilha[i]);
+       printf("%d ", pilha[i]);
     }
 }
 
@@ -53,53 +53,27 @@ void main()
 
     //Inserindo dados no vetor PILHAS usando a função pilhaPush;
     printf("\n\nEmpilhando / inserindo dados...");
-    pilhaPush(pilha, &topo, 10);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 20);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 30);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 40);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 50);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 60);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 70);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 80);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 90);
-    imprimeVetor(pilha);
-    pilhaPush(pilha, &topo, 100);
-    imprimeVetor(pilha);
+   
+    for (int i = 0; i < 10; i++)
+    {
+        pilhaPush(pilha, &topo, i);
+        imprimeVetor(pilha);
+    }
+  
     printf("\n\n--------------------------------------"); 
  
     //Retirando dados do vetor PILHAS usando a função pilhaPop.
-    printf("\n\nDesempilhando / retirando dados...");
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
-    imprimeVetor(pilha);
-    pilhaPop(pilha, &topo);
+    printf("\n\nDesempilhando / retirando dados...\n\n");
 
-    printf("----------------------\n\n");
+    imprimeVetor(pilha);
+    
+    for (int i = 0; i < 10; i++)
+    {
+        pilhaPop(pilha, &topo);
+        imprimeVetor(pilha);
+    }
+
+    printf("\n\n----------------------\n\n");
     imprimeVetor(pilha);
     printf("\n\n");
 }
